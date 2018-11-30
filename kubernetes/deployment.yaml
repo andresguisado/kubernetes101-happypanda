@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-happypanda-deployment
+  labels:
+    name: helloworld-happypanda-deployment
+spec:
+  selector:
+    matchLabels:
+      app: helloworld-happypanda
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 1
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: helloworld-happypanda
+    spec:
+      containers:
+      - name: helloworld-happypanda-pod
+        image: docker.io/andresguisado/helloworld-happypanda:0.0.1
+        ports:
+        - name: http
+          containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /index.html
+            port: 80
+            scheme: HTTP
+          initialDelaySeconds: 2
+          periodSeconds: 5
+          timeoutSeconds: 2
+        readinessProbe:
+          exec:
+            command:
+            - /bin/ls 
+            - /tmp/ready
+          initialDelaySeconds: 2
+          timeoutSeconds: 1
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "500m"
+          requests:
+            memory: "32Mi"
+            cpu: "250m"
