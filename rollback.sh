@@ -1,1 +1,1 @@
-k rollout undo deployment/helloworld-happypanda-deployment
+kubectl rollout undo deployment/helloworld-happypanda-deployment
