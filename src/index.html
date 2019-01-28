@@ -32,6 +32,30 @@
 		Copyright &copy; 2018, Andres Guisado.
 </footer>
 
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+    $.ajax({
+        url: 'configmaps.json&callback=?',
+        type: 'GET',
+        dataType: 'json',
+        success: displayConfigMap
+    });
+
+    $.ajax({
+        url: 'secrets.json&callback=?',
+        type: 'GET',
+        dataType: 'json',
+        success: displaySecret
+    });
+
+    function displayConfigMap(data){
+        alert(data);
+    }
+
+    function displaySecret(data){
+        alert(data);
+    }
+</script>
 </body>
 </html>
 
