@@ -47,3 +47,22 @@ spec:
           requests:
             memory: "32Mi"
             cpu: "250m"
+        volumeMounts:
+          - name: helloworld-happypanda-configmaps
+            mountPath: /usr/share/nginx/html/configmaps
+          - name: helloworld-happypanda-secrets
+            mountPath: /usr/share/nginx/html/secrets
+      volumes:
+      - name: helloworld-happypanda-configmaps
+        configMap:
+          name: helloworld-happypanda-configmap
+          items:
+          - key: APP_CONFIG
+            path: app_config.json
+      - name: helloworld-happypanda-secrets
+        secret:
+          secretName: helloworld-happypanda-secret
+          items:
+          - key: APP_SECRET
+            path: app_secret.json
+      

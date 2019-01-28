@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helloworld-happypanda-configmap
+data:
+  APP_CONFIG: |-
+    {   
+        "special_level": "very",
+        "special_type": "charm"
+    }
