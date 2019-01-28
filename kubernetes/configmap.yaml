@@ -5,6 +5,6 @@ metadata:
 data:
   APP_CONFIG: |-
     {   
-        "special_level": "very",
+        "special_level": "bad",
         "special_type": "charm"
     }
