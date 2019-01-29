@@ -21,11 +21,14 @@
     <nav id="leftmenu">
         <h3>Websites</h3>
     </nav><!--leftmenu end-->
+    
 	<section>
         <h2>Welcome to my Hello World! </h2>
-          <p>The secret is: <div id='secret'> </div></p>
-          <p>The configmap is: <div id='configmap'> </div></p>
-	      <img class="float" src="images/happypanda1.png" alt="happypanda icon">
+        <section>
+            <p>The configmap value is: <div id='configmap'> </div></p>
+            <p>The secret is: <div id='secret'> </div></p>
+        </section>
+	      <img class="float" src="images/happypanda3.png" alt="happypanda icon">
     </section>
 </div><!--container end-->
 <div style="clear:both"></div>
@@ -51,11 +54,11 @@
     });
 
     function displayConfigMap(data){
-        $('#configmap').html(data.special_level);
+        $('#configmap').html(data.status);
     }
 
     function displaySecret(data){
-        $('#secret').html(data.username);
+        $('#secret').html(data.password);
     }
 </script>
 </body>

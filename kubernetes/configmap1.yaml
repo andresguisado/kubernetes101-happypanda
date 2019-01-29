@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    name: helloworld-happypanda-configmap
+  name: helloworld-happypanda-configmap
+data:
+  APP_CONFIG: |-
+    {   
+        "animal": "panda",
+        "status": "happy"
+    }
