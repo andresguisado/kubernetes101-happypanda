@@ -7,6 +7,5 @@ metadata:
 data:
   APP_CONFIG: |-
     {   
-        "animal": "panda",
         "status": "happy"
     }
