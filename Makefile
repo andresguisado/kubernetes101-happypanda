@@ -104,8 +104,6 @@ demo-7:
 
 #Rollback to Version1 of Hello World Happy Panda
 demo-8:
-	kubectl delete -f ./kubernetes/secret2.yaml
-	kubectl delete -f ./kubernetes/configmap2.yaml
 	kubectl get pods
 	kubectl get deployments
 	kubectl get rs
