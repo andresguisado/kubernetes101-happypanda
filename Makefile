@@ -56,7 +56,7 @@ demo-4:
 	kubectl get deployments
 	kubectl get rs
 	kubectl get svc
-	kubectl rollout undo deployment/helloworld-happypanda-deployment --to-revision=3
+	kubectl rollout undo deployment/helloworld-happypanda-deployment --to-revision=1
 	kubectl get pods
 	kubectl get deployments
 	kubectl get rs
